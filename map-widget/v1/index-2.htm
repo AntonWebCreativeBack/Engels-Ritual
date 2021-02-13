@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <base target="_parent" />
+        <title>map frame</title>
+        <link rel="icon" href="data:;base64,iVBORw0KGgo=" />
+        <link rel="alternate icon" type="image/svg+xml" href="data:;base64,iVBORw0KGgo=" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    </head>
+    <body>
+        <style nonce="">.map-container {position: absolute;top: 0;left: 0;bottom: 0;right: 0;overflow: hidden;}</style>
+        <div class="map-container"></div>
+        <script src="https://api-maps.yandex.ru/2.1.74/?ns=ym&amp;coordorder=longlat&amp;counter_prefix=mapframe&amp;csp=true&amp;csp[version]=2.1&amp;mode=release&amp;lang=ru_RU" type="text/javascript"></script>
+        <script src="/map-widget/v1/app/all.js?v=app" type="text/javascript"></script>
+        <script type="text/javascript">
+            ym.modules
+                .define('mf.hosts', function (provide) {
+                    provide({"maps":"https://yandex.ru/maps/","mapsapi":"https://api-maps.yandex.ru/","widget":"https://api-maps.yandex.ru/services/constructor/","search":"https://api-maps.yandex.ru/services/search/","assetPath":"/map-widget/v1/app/","route":"https://api-maps.yandex.ru/services/route/"});
+                })
+                .define('mf.ua', function (provide) {
+                    provide({"BrowserEngine":"Unknown","BrowserName":"Unknown","OSFamily":"Unknown","isBrowser":false,"isMobile":false,"isTouch":false});
+                })
+                .define('mf.env', function (provide) {
+                    provide({"apiVersion":"2.1.74","tld":"ru","token":"70c5d3b4ae1b1c29549d84c6cf48b4e7","lang":"ru","apiLocale":"ru_RU","yametrika":{"id":[44120344]}});
+                })
+                .define('mf.query', ['mf.util.parseParams'], function (provide, parseParams) {
+                    provide(parseParams('um=constructor%3A9c9f5939139c59b423e4f289a47f5a39866f301117a9f5e582fd16194ddcd36d&lang=ru_RU&scroll=true&source=constructor&rll=46.034158%2C51.533103&center%5B0%5D=45.940924414642204&center%5B1%5D=51.44434158747371&zoom=14'));
+                })
+                .define('mf.preloadedMap', function (provide) {
+                    provide({"ymj":"1.0","maps":[{"properties":{"sid":"constructor:9c9f5939139c59b423e4f289a47f5a39866f301117a9f5e582fd16194ddcd36d","created":1507793252,"updated":1507793264,"access":"public","revision":"5","name":"Увекское кладбище","description":"Увекское кладбище"},"state":{"size":[500,660],"center":[45.940924414642204,51.44434158747371],"zoom":14,"type":"yandex#map","traffic":{"shown":false}},"geoObjects":{"type":"FeatureCollection","features":[{"type":"Feature","id":"105945072","properties":{"name":"Россия, Саратов, Увекское кладбище","description":"","iconContent":"","iconCaption":""},"geometry":{"type":"Point","coordinates":[45.943652,51.436635]},"options":{"zIndex":800000000,"order":800000000,"preset":"islands#blueIcon"}}]}}],"presetStorage":{}});
+                });
+            ym.ready(function () {
+                ym.modules.require(['mf.main']).fail(console.error);
+            }, console.error);
+        </script>
+    </body>
+</html>
